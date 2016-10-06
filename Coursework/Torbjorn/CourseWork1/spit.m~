@@ -1,0 +1,4 @@
+function [classfication] = spit(variableSet, index, threshold)
+    if ()
+end
+
