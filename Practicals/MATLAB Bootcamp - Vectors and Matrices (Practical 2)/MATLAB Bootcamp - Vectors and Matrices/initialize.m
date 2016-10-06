@@ -1,4 +1,5 @@
 function initialize()
-    % Your code goes here...
+    global v;
+    v = [1 2 3 4];
 end
  
