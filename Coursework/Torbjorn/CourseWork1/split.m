@@ -1,11 +1,14 @@
-function [classification] = split(variableSet, index, threshold)
+function [classification] = split(variable, index, threshold)
 %Get the VarName of the data (column), index to show the cell of the data (row), and threshold for the greater or less than    
 %Output value of the classification depending on the threshold and value
-value = fopen(variableSet, index);
+value = str2num(dataset(variable,index));
 %meas(variableSet, index);
 if (value <= threshold)
-        classification = iris1;
+        classification = 'iris1';
 else
-        classification = iris2;
+        classification = 'iris2';
 end
+message = sprintf('%d %d %d', value, variable, index, threshold);
+disp(message);
+disp(classification);
 

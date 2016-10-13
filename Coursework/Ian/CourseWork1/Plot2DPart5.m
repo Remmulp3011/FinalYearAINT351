@@ -14,6 +14,6 @@ subplot(1,1,1);
 hold on
 h = plot(dataUniform,'b.');
 set(h,'linewidth',3);
-title('dataUniform raw data plot');
-xlabel('Data point number');
-ylabel('Data point value');
+title('Uniform 2D plot');
+xlabel('x-value');
+ylabel('y-value');
