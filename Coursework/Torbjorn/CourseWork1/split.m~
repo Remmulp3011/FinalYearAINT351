@@ -4,7 +4,7 @@ function [classification] = split(variable, index, threshold)
 global numbers;
 global dataSet;
 value = numbers(variable, index);
-maxNumber = max(numbers);
+maxNumber = numbers;
 
 %For loop to loop through the data set intervals of records going from 0
 %(value passed from learnDecisisonTree) to the max number. Use this to
@@ -18,7 +18,6 @@ else
         classification = 'iris2';
 end
 disp(numbers);
-disp(dataSet);
 disp(maxNumber);
 disp(value);
 disp(classification);

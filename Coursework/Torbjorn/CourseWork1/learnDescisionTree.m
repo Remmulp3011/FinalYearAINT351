@@ -5,7 +5,6 @@ numbers = variables;
 measData = num2cell(variables);
 global dataSet;
 dataSet =[measData,classification];
-disp(dataSet);
 split(3,2,10);
 
 %speciesData = getVariable(fisheriris, species);
