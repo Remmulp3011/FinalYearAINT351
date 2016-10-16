@@ -1,32 +1,32 @@
  %Number of datapoints
 samples = 10000;
 
-%Create a Matrix of 1 X samples (1xn)
-dataUniform = randn(1,samples);
+%Create a Matrix of 1 X samples (1xn) from a normal distributon
+data = randn(1,samples);
 
 %Specify the number of bins
 nbins = 400;
 
 %Print the matrix size
-message = sprintf('dataUniform Matrix size %d x %d', size(dataUniform,1), size(dataUniform,2));
-disp(message);
+message = sprintf('data Matrix size %d x %d', size(data,1), size(data,2));
+fprintf(message);
 
 %Plot data on figure position 1
 figure
 subplot(1,2,1);
 hold on
-h = plot(dataUniform,'b.');
+h = plot(data,'b.');
 set(h,'linewidth',3);
-title('dataUniform raw data plot');
-xlabel('Data point number');
-ylabel('Data point value');
+title('Normal data plot');
+xlabel('Data point value');
+ylabel('Data point number');
 
 %Plot data on figure position 2
 subplot(1,2,2);
 hold on
-i = histogram(dataUniform,nbins);
-title('dataUniform histogram');
-xlabel('Data point number');
-ylabel('Data point value');
+i = histogram(data,nbins);
+title('Normal data histogram plot');
+xlabel('Data point value');
+ylabel('Data point occurance');
 
 
