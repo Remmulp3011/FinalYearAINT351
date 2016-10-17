@@ -5,7 +5,13 @@ numbers = variables;
 measData = num2cell(variables);
 global dataSet;
 dataSet =[measData,classification];
-split(3,2,10);
+global variableLocation;
+variableLocation = 1;
+global indexNumber;
+indexNumber = 1;
+global thresholdNumber;
+thresholdNumber = 1;
+split(variableLocation,indexNumber,thresholdNumber);
 
 %speciesData = getVariable(fisheriris, species);
 %disp(speciesData);

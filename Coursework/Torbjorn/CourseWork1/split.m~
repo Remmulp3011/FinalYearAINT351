@@ -3,8 +3,9 @@ function [classification] = split(variable, index, threshold)
 %Output value of the classification depending on the threshold and value
 global numbers;
 global dataSet;
+global 
 value = numbers(variable, index);
-maxNumber = numbers;
+maxNumber = max(numbers);
 
 %For loop to loop through the data set intervals of records going from 0
 %(value passed from learnDecisisonTree) to the max number. Use this to
@@ -12,12 +13,14 @@ maxNumber = numbers;
 
 
 %meas(variableSet, index);
+for (i =0; )
 if (value <= threshold)
         classification = 'iris1';
 else
         classification = 'iris2';
 end
 disp(numbers);
+disp(dataSet);
 disp(maxNumber);
 disp(value);
 disp(classification);

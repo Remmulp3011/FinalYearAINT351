@@ -3,6 +3,7 @@ function [classification] = split(variable, index, threshold)
 %Output value of the classification depending on the threshold and value
 global numbers;
 global dataSet;
+global indexNumber;
 value = numbers(variable, index);
 maxNumber = max(numbers);
 
@@ -12,10 +13,14 @@ maxNumber = max(numbers);
 
 
 %meas(variableSet, index);
+for (i =0; indexNumber <= size(meas); i++)
 if (value <= threshold)
+    add to subset 1
         classification = 'iris1';
 else
+    add to subset 2
         classification = 'iris2';
+end
 end
 disp(numbers);
 disp(dataSet);
