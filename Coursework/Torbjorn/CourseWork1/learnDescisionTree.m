@@ -1,17 +1,23 @@
 function learnDescisionTree(variables, classification)
 
-global numbers;
-numbers = variables;
+global variableSet;
+variableSet = variables;
+
 measData = num2cell(variables);
+
 global dataSet;
 dataSet =[measData,classification];
-global variableLocation;
-variableLocation = 1;
-global indexNumber;
-indexNumber = 1;
-global thresholdNumber;
-thresholdNumber = 1;
-split(variableLocation,indexNumber,thresholdNumber);
+
+global variableNum;
+variableNum = 1;
+
+global rowNum;
+rowNum = 1;
+
+global thresholdValue;
+thresholdValue = 1;
+
+split(variableNum,rowNum,thresholdValue);
 
 %speciesData = getVariable(fisheriris, species);
 %disp(speciesData);
