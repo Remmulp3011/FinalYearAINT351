@@ -18,6 +18,7 @@ global thresholdValue;
 thresholdValue = 5;
 
 split(variableNum,rowNum,thresholdValue);
+entropy(dataSet);
 
 end
 
