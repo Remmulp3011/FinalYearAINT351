@@ -1,4 +1,4 @@
-function [classification] = split(variableNum, rowNum, thresholdValue)
+function split(variableNum, rowNum, thresholdValue)
 %Get the VarName of the data (column), index to show the cell of the data (row), and threshold for the greater or less than    
 %Output value of the classification depending on the threshold and value
 global variableSet;
@@ -14,22 +14,20 @@ irisSet2 = [];
 for n=1:size(dataSet,1)
     if (value < thresholdValue)
         %add to subset 1
-        classification = 'iris1';
         irisSet1 = [irisSet1; dataSet(rowNum,1),dataSet(rowNum,2),dataSet(rowNum,3),dataSet(rowNum,4),dataSet(rowNum,5)]
         value = variableSet(rowNum,variableNum);
         rowNum = rowNum+1;
     else
         %add to subset 2
-        classification = 'iris2';
         irisSet2 = [irisSet2; dataSet(rowNum,1),dataSet(rowNum,2),dataSet(rowNum,3),dataSet(rowNum,4),dataSet(rowNum,5)]
         value = variableSet(rowNum,variableNum);
         rowNum = rowNum+1;
     end
 end
-disp('Iris Set 1:')
-disp(irisSet1);
-disp('Iris Set 2:')
-disp(irisSet2);
+% disp('Iris Set 1:')
+% disp(irisSet1);
+% disp('Iris Set 2:')
+% disp(irisSet2);
 
 % T = empty tree
 % repeat

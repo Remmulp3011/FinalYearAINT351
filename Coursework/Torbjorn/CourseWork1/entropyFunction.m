@@ -1,8 +1,7 @@
-function entropyFunction(dataSet)
-%ENTROPY Summary of this function goes here
-%   Detailed explanation goes here
+function entropyFunction(variableSet)
 
-E = entropy(dataSet);
+E = entropy(variableSet);
+disp('Entropy is:');
 disp(E);
 
 end
