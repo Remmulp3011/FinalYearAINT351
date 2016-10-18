@@ -11,7 +11,7 @@ irisSet2 = [];
 %(value passed from learnDecisisonTree) to the max number. Use this to
 %determine the type and populate into the next column.
 
-for n=1:size(dataSet,2)
+for n=1:size(dataSet,1)
     if (value < thresholdValue)
         %add to subset 1
         classification = 'iris1';
