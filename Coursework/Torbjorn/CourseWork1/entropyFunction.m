@@ -1,8 +1,9 @@
-function entropy(dataSet)
+function entropyFunction(dataSet)
 %ENTROPY Summary of this function goes here
 %   Detailed explanation goes here
 
-entropy(dataSet);
+E = entropy(dataSet);
+disp(E);
 
 end
 
