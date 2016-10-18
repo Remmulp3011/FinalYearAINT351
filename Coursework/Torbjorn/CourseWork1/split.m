@@ -11,19 +11,33 @@ irisSet2 = [];
 %(value passed from learnDecisisonTree) to the max number. Use this to
 %determine the type and populate into the next column.
 
-for n=rowNum:size(dataSet,2)
-if (value <= thresholdValue)
-    %add to subset 1
+for n=1:size(dataSet,2)
+    if (value < thresholdValue)
+        %add to subset 1
         classification = 'iris1';
-        irisSet1 = [irisSet1; dataSet(1,rowNum),dataSet(2,rowNum),dataSet(2,rowNum),dataSet(4,rowNum),dataSet(5,rowNum)]
-        value = variableSet(variableNum, rowNum+1);
-else
-    %add to subset 2
+        irisSet1 = [irisSet1; dataSet(rowNum,1),dataSet(rowNum,2),dataSet(rowNum,3),dataSet(rowNum,4),dataSet(rowNum,5)]
+        value = variableSet(rowNum,variableNum);
+        rowNum = rowNum+1;
+    else
+        %add to subset 2
         classification = 'iris2';
-        irisSet2 = [irisSet2; dataSet(1,rowNum),dataSet(2,rowNum),dataSet(2,rowNum),dataSet(4,rowNum),dataSet(5,rowNum)]
-        value = variableSet(variableNum, rowNum+1);
+        irisSet2 = [irisSet2; dataSet(rowNum,1),dataSet(rowNum,2),dataSet(rowNum,3),dataSet(rowNum,4),dataSet(rowNum,5)]
+        value = variableSet(rowNum,variableNum);
+        rowNum = rowNum+1;
+    end
 end
-end
+disp('Iris Set 1:')
 disp(irisSet1);
+disp('Iris Set 2:')
 disp(irisSet2);
 
+% T = empty tree
+% repeat
+%   split data-set, D, into sub-sets, S0-Sn, using T
+%   for each subset, Si
+%     for each variables, xj
+%       for each values, vk, in Si
+% 	  split Si into sub-sets Si1 and Si2: vk>xj and xj>=vk
+% 	  find max improvement max(I(Si1, Si2)) for split <Si, xj, vk> 
+%   add split <Si, xj, vk> with max(I(Si1, Si2)) to T
+% until max(I(Si1, Si2)) <= 0.0 
