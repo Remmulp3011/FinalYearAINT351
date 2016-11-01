@@ -1,6 +1,6 @@
 function improvement(irisSet1,irisSet2,dataSet)
 
-%Count number of each classification in the dataSet
+%Count number of each classification in the dataSets
 setosaCount = sum(strncmp('setosa',dataSet,6));
 virginicaCount = sum(strncmp('virginica',dataSet,6));
 versicolorCount = sum(strncmp('versicolor',dataSet,6));
@@ -12,6 +12,7 @@ versicolorCountSplit1 = sum(strncmp('versicolor',irisSet1,6));
 setosaCountSplit2 = sum(strncmp('setosa',irisSet2,6));
 virginicaCountSplit2 = sum(strncmp('virginica',irisSet2,6));
 versicolorCountSplit2 = sum(strncmp('versicolor',irisSet2,6));
+
 %Calculate the probability of each classification
 probSetosa = setosaCount(1,5)/size(dataSet,1);
 probVirginica = virginicaCount(1,5)/size(dataSet,1);
@@ -30,14 +31,44 @@ probVersicolorSplit2 = versicolorCountSplit2(1,5)/size(irisSet2,1);
 entropySetosa = (probSetosa * log2(probSetosa)); 
 entropyVirginica = (probVirginica * log2(probVirginica));
 entropyVersicolor = (probVersicolor * log2(probVersicolor));
-
+        
+        %Check if probability is zero because if it is zero and the log is
+        %carried out in next step the value will return infinity.
+if(probSetosaSplit1 ~= 0)
 entropySetosaSplit1 = (probSetosa * log2(probSetosaSplit1)); 
-entropyVirginicaSplit1 = (probVirginica * log2(probVirginicaSplit1));
-entropyVersicolorSplit1 = (probVersicolor * log2(probVersicolorSplit1));
+else
+    entropySetosaSplit1 = 0;
+end
 
-entropySetosaSplit2 = (probSetosa * log2(probSetosaSplit2)); 
+if(probVirginicaSplit1 ~= 0)
+entropyVirginicaSplit1 = (probVirginica * log2(probVirginicaSplit1));
+else
+    entropyVirginicaSplit1 = 0;
+end
+
+if(probVersicolorSplit1 ~= 0)
+entropyVersicolorSplit1 = (probVersicolor * log2(probVersicolorSplit1));
+else
+    entropyVersicolorSplit1 = 0;
+end
+
+if(probSetosaSplit2 ~= 0)
+entropySetosaSplit2 = (probSetosa * log2(probSetosaSplit2));
+else
+    entropySetosaSplit2 = 0;
+end
+
+if(probVirginicaSplit2 ~= 0)
 entropyVirginicaSplit2 = (probVirginica * log2(probVirginicaSplit2));
+else
+    entropyVirginicaSplit2 = 0;
+end
+
+if(probVersicolorSplit2 ~= 0)
 entropyVersicolorSplit2 = (probVersicolor * log2(probVersicolorSplit2));
+else
+    entropyVersicolorSplit2 = 0;
+end
 
 %Sum all of the above entropies
 entropy = -(entropySetosa + entropyVirginica + entropyVersicolor);
@@ -47,10 +78,20 @@ entropySplit2 = -(entropySetosaSplit2 + entropyVirginicaSplit2 + entropyVersicol
 %Calcualte the improvement
 improvementSet1 = entropy - entropySplit1;
 improvementSet2 = entropy - entropySplit2;
-disp(entropy); 
+
+disp('entropy of original set')
+disp(entropy);
+
+disp('entropy of split set 1')
 disp(entropySplit1);
-disp(entropySplit1);
+
+disp('entropy of split set 2')
+disp(entropySplit2);
+
+disp('improvement to set 1')
 disp(improvementSet1);
+
+disp('improvement to set 2')
 disp(improvementSet2);
 
 end

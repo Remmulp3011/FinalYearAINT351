@@ -1,6 +1,6 @@
 function improvement(irisSet1,irisSet2,dataSet)
 
-%Count number of each classification in the dataSet
+%Count number of each classification in the dataSets
 setosaCount = sum(strncmp('setosa',dataSet,6));
 virginicaCount = sum(strncmp('virginica',dataSet,6));
 versicolorCount = sum(strncmp('versicolor',dataSet,6));
@@ -12,6 +12,7 @@ versicolorCountSplit1 = sum(strncmp('versicolor',irisSet1,6));
 setosaCountSplit2 = sum(strncmp('setosa',irisSet2,6));
 virginicaCountSplit2 = sum(strncmp('virginica',irisSet2,6));
 versicolorCountSplit2 = sum(strncmp('versicolor',irisSet2,6));
+
 %Calculate the probability of each classification
 probSetosa = setosaCount(1,5)/size(dataSet,1);
 probVirginica = virginicaCount(1,5)/size(dataSet,1);
