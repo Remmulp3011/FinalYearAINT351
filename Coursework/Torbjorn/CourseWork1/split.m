@@ -1,10 +1,12 @@
-function split(variableNum, rowNum, thresholdValue)
+function split(variableNum, variableSet, thresholdValue)
 %Get the VarName of the data (column), index to show the cell of the data (row), and threshold for the greater or less than    
 %Output value of the classification depending on the threshold and value
-global variableSet;
 global dataSet;
-value = variableSet(variableNum, rowNum);
+rowNum = 1;
+value = variableSet(rowNum, variableNum);
+global irisSet1 
 irisSet1 = [];
+global irisSet2
 irisSet2 = [];
 
 %For loop to loop through the data set intervals of records going from 0
@@ -24,10 +26,13 @@ for n=1:size(dataSet,1)
         rowNum = rowNum+1;
     end
 end
-% disp('Iris Set 1:')
-% disp(irisSet1);
-% disp('Iris Set 2:')
-% disp(irisSet2);
+disp('Iris Set 1 final:')
+disp(size(irisSet1));
+disp(irisSet1);
+disp('Iris Set 2 final:')
+disp(size(irisSet2))
+disp(irisSet2);
+improvement(irisSet1,irisSet2,dataSet);
 
 % T = empty tree
 % repeat

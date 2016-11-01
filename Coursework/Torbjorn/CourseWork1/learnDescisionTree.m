@@ -9,16 +9,14 @@ global dataSet;
 dataSet =[measData,classification];
 
 global variableNum;
-variableNum = 1;
-
-global rowNum;
-rowNum = 1;
+variableNum = 4;
 
 global thresholdValue;
-thresholdValue = 5;
+thresholdValue = 1;
 
-split(variableNum,rowNum,thresholdValue);
-entropy(variableSet);
+split(variableNum,variableSet,thresholdValue);
+
+entropyFunction(dataSet);
 
 end
 

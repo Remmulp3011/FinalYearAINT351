@@ -11,15 +11,13 @@ setosaCount = sum(strncmp('setosa',dataSet,6));
 virginicaCount = sum(strncmp('virginica',dataSet,6));
 versicolorCount = sum(strncmp('versicolor',dataSet,6));
 
-%Calculate the probability of each classification
 probSetosa = setosaCount(1,5)/size(dataSet,1);
 probVirginica = virginicaCount(1,5)/size(dataSet,1);
 probVersicolor = versicolorCount(1,5)/size(dataSet,1);
-
 %Calculate the entropy for each classification
 entropySetosa = (probSetosa * log2(probSetosa)); 
 entropyVirginica = (probVirginica * log2(probVirginica));
-entropyVersicolor = (probVersicolor * log2(probVersicolor));
+entropyVersicolor = (probVersicolor * log2(versicolorCount(1,5)/size(dataSet,1)));
 
 %Sum all of the above entropies
 entropy = -(entropySetosa + entropyVirginica + entropyVersicolor);
