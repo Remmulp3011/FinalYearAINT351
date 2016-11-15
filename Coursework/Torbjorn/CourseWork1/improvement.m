@@ -26,14 +26,13 @@ probSetosaSplit2 = setosaCountSplit2(1,5)/size(irisSet2,1);
 probVirginicaSplit2 = virginicaCountSplit2(1,5)/size(irisSet2,1);
 probVersicolorSplit2 = versicolorCountSplit2(1,5)/size(irisSet2,1);
 
-
 %Calculate the entropy for each classification
 entropySetosa = (probSetosa * log2(probSetosa)); 
 entropyVirginica = (probVirginica * log2(probVirginica));
 entropyVersicolor = (probVersicolor * log2(probVersicolor));
         
-        %Check if probability is zero because if it is zero and the log is
-        %carried out in next step the value will return infinity.
+%Check if probability is zero because if it is zero and the log is
+%carried out in next step the value will return infinity.
 if(probSetosaSplit1 ~= 0)
 entropySetosaSplit1 = (probSetosa * log2(probSetosaSplit1)); 
 else
