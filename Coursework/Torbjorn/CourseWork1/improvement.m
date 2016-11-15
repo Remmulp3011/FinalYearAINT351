@@ -1,5 +1,7 @@
 function improvement(irisSet1,irisSet2,dataSet)
 
+%This function is correct as this needs to be done orginally.
+
 %Count number of each classification in the dataSets
 setosaCount = sum(strncmp('setosa',dataSet,6));
 virginicaCount = sum(strncmp('virginica',dataSet,6));
@@ -75,8 +77,14 @@ entropySplit1 = -(entropySetosaSplit1 + entropyVirginicaSplit1 + entropyVersicol
 entropySplit2 = -(entropySetosaSplit2 + entropyVirginicaSplit2 + entropyVersicolorSplit2);
 
 %Calcualte the improvement
-improvementSet1 = entropy - entropySplit1;
-improvementSet2 = entropy - entropySplit2;
+%For improvement this will be the orginal minus the sum of the other
+%entropies
+%The entropies must be weighted for example if set1 has 90% of the values
+%the entropy of set 1 should be multplied by 0.9 and same for set 2. Total
+%records is 150 split 1 has 51 split 2 has 99. Using size here to get the
+%percentage of records in each set.
+improvement = entropy - ((entropySplit1 * size(irisSet1,1)/size(dataSet,1)) + (entropySplit2 * size(irisSet2,1)/size(dataSet,1)));
+
 
 disp('entropy of original set')
 disp(entropy);
@@ -87,11 +95,8 @@ disp(entropySplit1);
 disp('entropy of split set 2')
 disp(entropySplit2);
 
-disp('improvement to set 1')
-disp(improvementSet1);
-
-disp('improvement to set 2')
-disp(improvementSet2);
+disp('improvement on this split is')
+disp(improvement);
 
 end
 

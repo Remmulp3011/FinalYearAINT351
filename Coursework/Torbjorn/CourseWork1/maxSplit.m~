@@ -8,8 +8,7 @@ function [ output_args ] = maxSplit( input_args )
 %the value in that varibale list, this is what will be split on. Do this
 %for each value and keep record of only the max improvement value, others
 %can be deleted. Use the unique function and sub out values to loop through
-%in a for statement and then pass to improvement function to calcualte the
-%improvement inorder to get the max improvement.
+%in a for statement and then 
 
 end
 
