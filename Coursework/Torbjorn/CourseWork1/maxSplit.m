@@ -1,4 +1,4 @@
-function maxSplit(improvementValue,dataSet)
+function maxSplit(improvementValue)
 %MAXSPLIT Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -10,26 +10,43 @@ function maxSplit(improvementValue,dataSet)
 %can be deleted. Use the unique function and sub out values to loop through
 %in a for statement and then pass to improvement function to calcualte the
 %improvement inorder to get the max improvement.
+global variableNum;
+global thresholdValue;
+global variableSet;
+global rowNumber;
 
 persistent improvementStorage
-if(isEmpty(improvementStorage))
-  disp('M is not initialized');
-end
-
-improvementStorage = [1 1];
-
+if(isempty(improvementStorage))
+  disp('Improvement storage is not initialized');
+  improvementStorage = zeros(1);
 end
 
 if(improvementValue > improvementStorage(1,1))
     improvementStorage(1,1)= improvementValue;
 end
 
-
+%Loop through all values in each varibale of the dataSet
+if (variableNum <= 4 && rowNumber <= size(variableSet,1))
+    if(variableNum <= 4 && rowNumber > size(variableSet,1))
+        variableNum = variableNum+1;
+        rowNumber = 1;
+    end
+    for n=1:size(variableSet,1)
+        value = variableSet(rowNumber,variableNum);
+        rowNumber = rowNumber+1;
+        thresholdValue = value;
+        split(variableNum, variableSet, thresholdValue);
+    end
+else
+        disp('Program finished max improvment is:');
+        disp(improvementStorage(1,1));
+end
+    
 disp(improvementStorage);
 disp(size(improvementStorage));
-
-disp('Max split function entered');
-
 disp(improvementValue);
+disp(variableNum);
+disp(thresholdValue);
+%disp(variableSet);
 end
 

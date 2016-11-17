@@ -16,22 +16,22 @@ irisSet2 = [];
 for n=1:size(dataSet,1)
     if (value < thresholdValue)
         %add to subset 1
-        irisSet1 = [irisSet1; dataSet(rowNum,1),dataSet(rowNum,2),dataSet(rowNum,3),dataSet(rowNum,4),dataSet(rowNum,5)]
+        irisSet1 = [irisSet1; dataSet(rowNum,1),dataSet(rowNum,2),dataSet(rowNum,3),dataSet(rowNum,4),dataSet(rowNum,5)];
         value = variableSet(rowNum,variableNum);
         rowNum = rowNum+1;
     else
         %add to subset 2
-        irisSet2 = [irisSet2; dataSet(rowNum,1),dataSet(rowNum,2),dataSet(rowNum,3),dataSet(rowNum,4),dataSet(rowNum,5)]
+        irisSet2 = [irisSet2; dataSet(rowNum,1),dataSet(rowNum,2),dataSet(rowNum,3),dataSet(rowNum,4),dataSet(rowNum,5)];
         value = variableSet(rowNum,variableNum);
         rowNum = rowNum+1;
     end
 end
-disp('Iris Set 1 final:')
-disp(size(irisSet1));
-disp(irisSet1);
-disp('Iris Set 2 final:')
-disp(size(irisSet2))
-disp(irisSet2);
+% disp('Iris Set 1 final:')
+% disp(size(irisSet1));
+% disp(irisSet1);
+% disp('Iris Set 2 final:')
+% disp(size(irisSet2))
+% disp(irisSet2);
 entropyFunction(irisSet1,irisSet2,dataSet);
 
 % T = empty tree

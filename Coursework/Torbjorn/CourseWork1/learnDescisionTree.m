@@ -9,10 +9,13 @@ global dataSet;
 dataSet =[measData,classification];
 
 global variableNum;
-variableNum = 4;
+variableNum = 1;
 
 global thresholdValue;
 thresholdValue = 1;
+
+global rowNumber;
+rowNumber = 1;
 
 split(variableNum,variableSet,thresholdValue);
 

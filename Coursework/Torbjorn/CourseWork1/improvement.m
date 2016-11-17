@@ -19,7 +19,7 @@ improvementValue = entropy - ((entropySplit1 * size(irisSet1,1)/size(dataSet,1))
 disp('improvement on this split is')
 disp(improvementValue);
 
-maxSplit(improvementValue,dataSet);
+maxSplit(improvementValue);
 
 end
 
