@@ -32,7 +32,7 @@ disp(irisSet1);
 disp('Iris Set 2 final:')
 disp(size(irisSet2))
 disp(irisSet2);
-improvement(irisSet1,irisSet2,dataSet);
+entropyFunction(irisSet1,irisSet2,dataSet);
 
 % T = empty tree
 % repeat

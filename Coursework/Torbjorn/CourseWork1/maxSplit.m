@@ -1,4 +1,4 @@
-function [ output_args ] = maxSplit( input_args )
+function maxSplit(improvementValue,dataSet)
 %MAXSPLIT Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -11,5 +11,25 @@ function [ output_args ] = maxSplit( input_args )
 %in a for statement and then pass to improvement function to calcualte the
 %improvement inorder to get the max improvement.
 
+persistent improvementStorage
+if(isEmpty(improvementStorage))
+  disp('M is not initialized');
+end
+
+improvementStorage = [1 1];
+
+end
+
+if(improvementValue > improvementStorage(1,1))
+    improvementStorage(1,1)= improvementValue;
+end
+
+
+disp(improvementStorage);
+disp(size(improvementStorage));
+
+disp('Max split function entered');
+
+disp(improvementValue);
 end
 

@@ -16,7 +16,5 @@ thresholdValue = 1;
 
 split(variableNum,variableSet,thresholdValue);
 
-entropyFunction(dataSet);
-
 end
 
