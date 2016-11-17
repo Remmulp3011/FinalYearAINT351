@@ -23,14 +23,15 @@ end
 
 if(improvementValue > improvementStorage(1,1))
     improvementStorage(1,1)= improvementValue;
+    disp('Improvement is better. New improvement is:')
+    disp(improvementStorage(1,1));
+else
+    disp('Improvement is not better. The improvement is still:')
+    disp(improvementStorage(1,1));
 end
 
 %Loop through all values in each varibale of the dataSet
 if (variableNum <= 4 && rowNumber <= size(variableSet,1))
-    if(variableNum <= 4 && rowNumber > size(variableSet,1))
-        variableNum = variableNum+1;
-        rowNumber = 1;
-    end
     for n=1:size(variableSet,1)
         value = variableSet(rowNumber,variableNum);
         rowNumber = rowNumber+1;
@@ -38,8 +39,14 @@ if (variableNum <= 4 && rowNumber <= size(variableSet,1))
         split(variableNum, variableSet, thresholdValue);
     end
 else
+    if(variableNum <= 4 && rowNumber > size(variableSet,1))
+        variableNum = variableNum+1;
+        rowNumber = 1;
+        maxSplit(improvementValue);
+else
         disp('Program finished max improvment is:');
         disp(improvementStorage(1,1));
+    end
 end
     
 disp(improvementStorage);
