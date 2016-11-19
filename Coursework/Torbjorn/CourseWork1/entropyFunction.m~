@@ -30,9 +30,10 @@ else
 end
 
 if(size(irisSet1,1) ~= 0)
-    probSetosaSplit1 = setosaCountSplit1(1,size(setosaCountSplit1,2))/size(irisSet1,1);
-    probVirginicaSplit1 = virginicaCountSplit1(1,size(virginicaCountSplit1,2))/size(irisSet1,1);
-    probVersicolorSplit1 = versicolorCountSplit1(1,size(versicolorCountSplit1,2))/size(irisSet1,1);
+    
+    probSetosaSplit1 = setosaCountSplit1(1,5)/size(irisSet1,1);
+    probVirginicaSplit1 = virginicaCountSplit1(1,5)/size(irisSet1,1);
+    probVersicolorSplit1 = versicolorCountSplit1(1,5)/size(irisSet1,1);
 else
     probSetosaSplit1 = 0;
     probVirginicaSplit1 = 0;
@@ -40,9 +41,9 @@ else
 end
 
 if(size(irisSet2,1) ~= 0)
-    probSetosaSplit2 = setosaCountSplit2(1,size(setosaCountSplit2,2))/size(irisSet2,1);
-    probVirginicaSplit2 = virginicaCountSplit2(1,size(virginicaCountSplit2,2))/size(irisSet2,1);
-    probVersicolorSplit2 = versicolorCountSplit2(1,size(versicolorCountSplit2,2))/size(irisSet2,1);
+    probSetosaSplit2 = setosaCountSplit2(1,5)/size(irisSet2,1);
+    probVirginicaSplit2 = virginicaCountSplit2(1,5)/size(irisSet2,1);
+    probVersicolorSplit2 = versicolorCountSplit2(1,5)/size(irisSet2,1);
 else
     probSetosaSplit2 = 0;
     probVirginicaSplit2 = 0;

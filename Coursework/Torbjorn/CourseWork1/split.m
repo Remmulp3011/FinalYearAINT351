@@ -4,9 +4,7 @@ function split(variableNum, variableSet, thresholdValue)
 global dataSet;
 rowNum = 1;
 value = variableSet(rowNum, variableNum);
-global irisSet1 
 irisSet1 = [];
-global irisSet2
 irisSet2 = [];
 
 %For loop to loop through the data set intervals of records going from 0

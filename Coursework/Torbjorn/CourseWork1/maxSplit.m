@@ -34,26 +34,30 @@ end
 if (variableNum <= 4 && rowNumber <= size(variableSet,1))
     for n=1:size(variableSet,1)
         value = variableSet(rowNumber,variableNum);
+        disp(rowNumber);
         rowNumber = rowNumber+1;
         thresholdValue = value;
+        disp('variable number is');
+        disp(variableNum);
         split(variableNum, variableSet, thresholdValue);
     end
 else
     if(variableNum <= 4 && rowNumber > size(variableSet,1))
+        disp('else loop entered to show end of variable set');
         variableNum = variableNum+1;
         rowNumber = 1;
         maxSplit(improvementValue);
 else
-        disp('Program finished max improvment is:');
+        disp('Program finished max improvement is:');
         disp(improvementStorage(1,1));
     end
 end
     
-disp(improvementStorage);
-disp(size(improvementStorage));
-disp(improvementValue);
-disp(variableNum);
-disp(thresholdValue);
+% disp(improvementStorage);
+% disp(size(improvementStorage));
+% disp(improvementValue);
+% disp(variableNum);
+% disp(thresholdValue);
 %disp(variableSet);
 end
 
