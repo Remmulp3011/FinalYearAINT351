@@ -14,17 +14,25 @@ global variableNum;
 global thresholdValue;
 global variableSet;
 global rowNumber;
+global irisSet1;
+global irisSet2;
+global bestSplitSet1;
+global bestSplitSet2;
 
+%Create the array to store the max improvement value on first iteration
 persistent improvementStorage
 if(isempty(improvementStorage))
   disp('Improvement storage is not initialized');
   improvementStorage = zeros(1);
 end
 
+%Check the improvement value to determine if it is larger than the current
 if(improvementValue > improvementStorage(1,1))
     improvementStorage(1,1)= improvementValue;
     disp('Improvement is better. New improvement is:')
     disp(improvementStorage(1,1));
+    bestSplitSet1 = irisSet1;
+    bestSplitSet2 = irisSet2;
 else
     disp('Improvement is not better. The improvement is still:')
     disp(improvementStorage(1,1));
@@ -37,13 +45,10 @@ if (variableNum <= 4 && rowNumber <= size(variableSet,1))
         disp(rowNumber);
         rowNumber = rowNumber+1;
         thresholdValue = value;
-        disp('variable number is');
-        disp(variableNum);
         split(variableNum, variableSet, thresholdValue);
     end
 else
     if(variableNum <= 4 && rowNumber > size(variableSet,1))
-        disp('else loop entered to show end of variable set');
         variableNum = variableNum+1;
         rowNumber = 1;
         maxSplit(improvementValue);
@@ -52,12 +57,5 @@ else
         disp(improvementStorage(1,1));
     end
 end
-    
-% disp(improvementStorage);
-% disp(size(improvementStorage));
-% disp(improvementValue);
-% disp(variableNum);
-% disp(thresholdValue);
-%disp(variableSet);
 end
 
