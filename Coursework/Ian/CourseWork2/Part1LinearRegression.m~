@@ -1,0 +1,21 @@
+
+%Specify number of samples to take
+samples = 100;
+
+%Set 
+minX = -4;
+maxX = 6;
+x = linspace(-4,6);
+c = 6;
+m = 1.6;
+y = m*x+c;
+r = randn(1,samples);
+
+figure
+plot(x,r(1,:)+y,'-o','linewidth',2) 
+
+
+%     b0 = 3;
+%     b1 = 4;
+%     f = @(x) b0-b1*x;
+%     ezplot(f,0,5)
