@@ -13,11 +13,12 @@ if(state == 1)
     end
 end
 
-%Possibilities for state 2
-if(state == 2)
-    nextState = state;
-    disp('In goal state')
-end
+%Possibilities for state 2 not needed as you can never be in the the goal
+%state.
+% if(state == 2)
+%     nextState = state;
+%     disp('In goal state')
+% end
 
 %Possibilities for state 3
 if(state == 3)
