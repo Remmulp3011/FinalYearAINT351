@@ -1,4 +1,4 @@
-function [ output_args ] = eGreedyActionSelection( input_args )
+function eGreedyActionSelection(qTable,state)
 %EGREEDYACTIONSELECTION Summary of this function goes here
 %   Detailed explanation goes here
 

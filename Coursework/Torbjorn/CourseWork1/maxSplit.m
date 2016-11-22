@@ -18,6 +18,8 @@ global irisSet1;
 global irisSet2;
 global bestSplitSet1;
 global bestSplitSet2;
+global bestVariableSet;
+global bestVariable;
 
 %Create the array to store the max improvement value on first iteration
 persistent improvementStorage
@@ -33,6 +35,8 @@ if(improvementValue > improvementStorage(1,1))
     disp(improvementStorage(1,1));
     bestSplitSet1 = irisSet1;
     bestSplitSet2 = irisSet2;
+    bestVariableSet = variableNum;
+    bestVariable = variableSet(rowNumber,variableNum);
 else
     disp('Improvement is not better. The improvement is still:')
     disp(improvementStorage(1,1));
@@ -55,6 +59,9 @@ else
 else
         disp('Program finished max improvement is:');
         disp(improvementStorage(1,1));
+        bestSplitting = [bestSplitSet1; bestSplitSet2; bestVariableSet; bestVariable];
+        disp('Best sets, variable and value');
+        disp(bestSplitting);
     end
 end
 end

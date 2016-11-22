@@ -17,6 +17,11 @@ thresholdValue = 1;
 global rowNumber;
 rowNumber = 1;
 
+global bestSplitSet1;
+global bestSplitSet2;
+global bestVariableSet;
+global bestVariable;
+
 split(variableNum,variableSet,thresholdValue);
 
 end
