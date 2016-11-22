@@ -70,7 +70,5 @@ end
 %improvement split should be stored permanentaly in a new matrix i.e. the
 %variable set, threshold value etc. There should be 3 nested loops to do
 %this and should stop when there is no further splits. End result should be
-%a matrix of all these values stated above. Summary need to loop through
-%all split sets again doing the same and storing the values listed in
-%another matrix.
+%a matrix of all these valu
 

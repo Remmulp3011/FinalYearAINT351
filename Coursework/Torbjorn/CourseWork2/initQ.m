@@ -13,6 +13,7 @@ zlabel('Q-values')
 %axis = [xmin,xmax,ymin,ymax,zmin,zmax]
 axis([1,4,1,11,0,1])
 
+disp(qTable);
 eGreedyActionSelection(qTable,1);
 
 end
