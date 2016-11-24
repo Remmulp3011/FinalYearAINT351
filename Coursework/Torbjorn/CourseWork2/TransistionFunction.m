@@ -1,7 +1,6 @@
 function TransistionFunction(state,action)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
 
+%Pass to qLearning
 global nextState;
 
 %Possibilities for state 1

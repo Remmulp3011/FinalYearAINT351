@@ -8,5 +8,6 @@ position = randi(length(startingStates));
 
 state = startingStates(position);
 
+%Pass to qlearning
 end
 
