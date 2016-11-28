@@ -23,7 +23,6 @@ disp(action);
 disp(resultingState);
 disp(reward);
 disp('next Action = ')
-disp(eGreedyActionSelection(resultingState,qTable));
 value = qTable(state,action) + learningRate * (reward + temporalDiscount * qTable(resultingState,eGreedyActionSelection(resultingState,qTable))-qTable(state,action));
 
 disp(value);
