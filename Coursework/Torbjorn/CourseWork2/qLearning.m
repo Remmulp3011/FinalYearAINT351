@@ -1,4 +1,4 @@
-function qLearning(qTable,state,action,resultingState,reward)
+function qLearning(state,action,resultingState,reward)
 %QLEARNING Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -14,19 +14,17 @@ function qLearning(qTable,state,action,resultingState,reward)
 %will be 10 or 0 (based on the reward function).
 
 %Use a temporal dicscount rate, ?, of 0.9 and a learning rate, ?, of 0.2
+global qTable;
+global endTrialState;
 learningRate = 0.2;
 temporalDiscount = 0.9;
-disp('Qlearning ENTERED Values of');
-disp(qTable);
-disp(state);
-disp(action);
-disp(resultingState);
-disp(reward);
-disp('next Action = ')
-disp(eGreedyActionSelection(resultingState,qTable));
-value = qTable(state,action) + learningRate * (reward + temporalDiscount * qTable(resultingState,eGreedyActionSelection(resultingState,qTable))-qTable(state,action));
 
-disp(value);
+qValue = qTable(state,action) + learningRate * (reward + temporalDiscount * max(qTable(resultingState,:))-qTable(state,action));
+
+qTable(state,action) = qValue;
+
+
+endTrialState = resultingState;
 
 end
 

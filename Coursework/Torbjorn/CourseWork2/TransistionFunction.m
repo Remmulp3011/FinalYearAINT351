@@ -1,9 +1,9 @@
 function TransistionFunction(state,action)
 
 %Pass to qLearning
-global nextState;
 global reward;
 global qTable;
+global nextState;
 
 %Possibilities for state 1
 if(state == 1)
@@ -135,7 +135,7 @@ if(state == 11)
     end
 end
 
-qLearning(qTable,state,action,nextState,reward);
+qLearning(state,action,nextState,reward);
 
 end
 

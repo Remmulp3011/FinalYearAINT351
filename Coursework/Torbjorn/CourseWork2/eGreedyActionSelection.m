@@ -20,14 +20,10 @@ end
 
 %Used for percentage of the time.
 if(randomNum <= 0.9)
-    disp('max action is:');
-    disp(maxAction);
     nextAction = maxAction(1,1);
     rewardFunction(state,maxAction(1,1));
 else
-    disp('Random action is:')
     randomAction = randi(length(qTable(2)));
-    disp(randomAction);
     nextAction = randomAction;
     rewardFunction(state,randomAction);
 end
