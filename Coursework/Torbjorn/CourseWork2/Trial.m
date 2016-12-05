@@ -4,7 +4,6 @@ function Trial
 global TrialNumber
 TrialNumber = 1;
 
-
 Episode();
 
 end

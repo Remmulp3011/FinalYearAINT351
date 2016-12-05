@@ -50,7 +50,7 @@ if(state == 5)
     else
         if(action == 3)
             nextState = 2;
-            disp('In goal state')
+            %disp('In goal state')
         else
             nextState = state;
         end

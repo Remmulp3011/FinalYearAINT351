@@ -4,6 +4,7 @@ function Episode
 global endTrialState;
 global qTable;
 global TrialNumber;
+global stepNumberStore
 stepNumberStore=[];
 
 initQ();
@@ -20,13 +21,13 @@ end
 stepNumberStore(1,TrialNumber) = stepNumber;
 TrialNumber = TrialNumber + 1;
 end
-disp(stepNumberStore);
+%disp(stepNumberStore);
 
-figure
-plot(stepNumberStore)
-title('Q-learning performance improvement')
-xlabel('Episode Number')
-ylabel('Number of Steps')
+% figure
+% plot(stepNumberStore)
+% title('Q-learning performance improvement')
+% xlabel('Episode Number')
+% ylabel('Number of Steps')
 %axis = [xmin,xmax,ymin,ymax,zmin,zmax]
 
 end
