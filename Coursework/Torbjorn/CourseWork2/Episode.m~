@@ -6,10 +6,10 @@ global qTable;
 global TrialNumber;
 stepNumberStore=[];
 
+stepNumber = 1;
 initQ();
 
-while TrialNumber <= 100
-stepNumber = 1;
+while TrialNumber <= 50
 StartingState();
 
 while endTrialState ~= 2
@@ -20,13 +20,10 @@ end
 stepNumberStore(1,TrialNumber) = stepNumber;
 TrialNumber = TrialNumber + 1;
 end
-disp(stepNumberStore);
 
-figure
-plot(stepNumberStore)
-title('Q-learning performance improvement')
-xlabel('Episode Number')
-ylabel('Number of Steps')
-%axis = [xmin,xmax,ymin,ymax,zmin,zmax]
+disp('Goal state reached. Number of steps = ');
+disp(stepNumber);
+disp(stepNumberStore);
+disp(qTable);
 
 end
