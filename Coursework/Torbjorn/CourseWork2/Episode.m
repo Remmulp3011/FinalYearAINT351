@@ -5,9 +5,7 @@ global endTrialState;
 global qTable;
 global TrialNumber;
 global stepNumberStore
-stepNumberStore=[];
-
-initQ();
+global columnNum;
 
 while TrialNumber <= 100
 stepNumber = 1;
@@ -18,10 +16,9 @@ while endTrialState ~= 2
     stepNumber = stepNumber + 1;
     eGreedyActionSelection(qTable,state);
 end
-stepNumberStore(1,TrialNumber) = stepNumber;
+stepNumberStore(columnNum,TrialNumber) = stepNumber;
 TrialNumber = TrialNumber + 1;
 end
-%disp(stepNumberStore);
 
 % figure
 % plot(stepNumberStore)

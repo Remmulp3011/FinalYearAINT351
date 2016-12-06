@@ -4,12 +4,11 @@ function Episode
 global endTrialState;
 global qTable;
 global TrialNumber;
-stepNumberStore=[];
+global stepNumberStore
+stepNumberStore= stepNumberStore;
 
+while TrialNumber <= 100
 stepNumber = 1;
-initQ();
-
-while TrialNumber <= 50
 StartingState();
 
 while endTrialState ~= 2
@@ -20,10 +19,6 @@ end
 stepNumberStore(1,TrialNumber) = stepNumber;
 TrialNumber = TrialNumber + 1;
 end
-
-disp('Goal state reached. Number of steps = ');
-disp(stepNumber);
-disp(stepNumberStore);
-disp(qTable);
+%disp(stepNumberStore);
 
 end
