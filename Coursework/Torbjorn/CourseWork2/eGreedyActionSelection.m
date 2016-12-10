@@ -1,4 +1,4 @@
-function [nextAction] = eGreedyActionSelection(qTable,state)
+function eGreedyActionSelection(qTable,state)
 %EGREEDYACTIONSELECTION Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -18,17 +18,14 @@ for n=1:size(qTable,2)
     action = action+1;
 end
 
-%Used for percentage of the time.
+%Used for percentage of the time. 90% of time return max value and 10% of
+%the time return a random value.
 if(randomNum <= 0.9)
-    nextAction = maxAction(1,1);
     rewardFunction(state,maxAction(1,1));
 else
     randomAction = randi(length(qTable(2)));
-    nextAction = randomAction;
     rewardFunction(state,randomAction);
 end
-
-%Pass qtable to qlearning
 
 end
 

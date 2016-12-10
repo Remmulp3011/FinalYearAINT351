@@ -1,6 +1,6 @@
 function rewardFunction(state, action)
-%REWARDFUNCTION Summary of this function goes here
-%   Detailed explanation goes here
+%REWARDFUNCTION: Determine the reward given for each state. Only award 10
+%if in state 5 and action 3 is taken as this results in the goal state.
 
 global reward;
 if(state == 5)

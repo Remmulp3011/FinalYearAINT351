@@ -1,12 +1,14 @@
 function Episode
-%EPISODE Summary of this function goes here
-%   Detailed explanation goes here
+%EPISODE: Run the number of episode specified by the trial and count and
+%store the number of steps taken to reach the goal state from the random
+%starting state.
 global endTrialState;
 global qTable;
 global TrialNumber;
 global stepNumberStore
 global columnNum;
 
+%Run 100 episodes in each trial.
 while TrialNumber <= 100
 stepNumber = 1;
 StartingState();

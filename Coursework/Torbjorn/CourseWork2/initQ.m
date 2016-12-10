@@ -1,6 +1,7 @@
 function initQ
-%INITQ Summary of this function goes here
-%   Detailed explanation goes here
+
+%INITQ: Function to initial a new Q-table of random values between 0.01 and
+%0.1 of size 11 by 4.
 global qTable;
 qTable = 0.01 + (0.1-0.01)*rand(11,4);
 

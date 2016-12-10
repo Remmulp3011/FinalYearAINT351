@@ -1,8 +1,10 @@
 function TransistionFunction(state,action)
 
-%Pass to qLearning
+%TransistionFunction: building the environement for the transitions. Taking
+%an action and state and returning the next state from taking that action
+%from that current state.
+
 global reward;
-global qTable;
 global nextState;
 
 %Possibilities for state 1
@@ -13,13 +15,6 @@ if(state == 1)
         nextState = state;
     end
 end
-
-%Possibilities for state 2 not needed as you can never be in the the goal
-%state.
-% if(state == 2)
-%     nextState = state;
-%     disp('In goal state')
-% end
 
 %Possibilities for state 3
 if(state == 3)
@@ -44,13 +39,13 @@ if(state == 4)
 end
 
 %Possibilities for state 5
+%Action 3 from state 5 will result in the goal state (2) being achieved.
 if(state == 5)
     if(action == 1)
         nextState = 9;
     else
         if(action == 3)
             nextState = 2;
-            %disp('In goal state')
         else
             nextState = state;
         end
