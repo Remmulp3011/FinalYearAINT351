@@ -20,12 +20,12 @@ while state ~= 2
     %Use the random position to select a action from the list.
     action = actions(position);
 
+    %Get observations and the next state
     Observations(state);
-    
     Transistion(state,action);
-    
     state = nextState;
     
+    %Write results to episode matrix
     episode(rowNum,1) = observation;
     episode(rowNum,2) = action;
     episode(rowNum,3) = 1;
