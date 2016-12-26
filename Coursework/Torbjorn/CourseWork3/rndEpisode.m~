@@ -4,7 +4,6 @@ function rndEpisode(startState)
 
 global observation;
 global nextState;
-global stepStore;
 
 episode = [];
 state = startState;
@@ -48,7 +47,6 @@ end
 
 disp('Number of steps taken = ')
 disp(stepCount);
-stepStore(1,iterationNumber) = stepCount;
 
 %Create a matrix of zeros with size of this being 20 - size of episode e.g.
 %episode has 15 rows matrix of zeros will be 20-15=5. Concat this (with zero matrix first)
@@ -59,14 +57,12 @@ if size(episode,1)<20
     episode = [zeroMatrix;episode];
     last20Steps = episode;
 else
-    last20Steps = episode(size(episode,1)-19:size(episode,1),:);
+    last20Steps = episode(size(episode,1)-20:size(episode,1),:);
 end
-%disp('size is')
-%disp(size(last20Steps));
+
+LTM(:,:,iterationNumber) = last20Steps;
 %disp('last 20 steps are:');
 %disp(last20Steps);
-LTM(:,:,iterationNumber) = last20Steps;
-
 
 end
 
