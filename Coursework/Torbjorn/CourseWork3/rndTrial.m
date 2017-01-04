@@ -11,6 +11,8 @@ global iterationNumber
 iterationNumber = 1;
 global stepStore 
 stepStore = zeros(1,numberOfEpisodesAdded);
+
+
 %Store results of the 20x3 matrix in the LTM for each iteration. Each
 %episode will generate a new 20X3 matrix which should be added to LTM. When
 %the LTM is called with (:,:,3) it should return the 3rd episodes results
@@ -29,6 +31,13 @@ end
 %disp(stepStore);
 %Maybe should call the intial random start state generater which will in
 %turn call the rnd Episode.
+
+
+%final = [stepStore; LTM];
+%To plot rndTrial like in step 3
+
+%figure
+%plot(final);
 
 end
 

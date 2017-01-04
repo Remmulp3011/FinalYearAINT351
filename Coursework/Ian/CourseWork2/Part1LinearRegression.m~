@@ -16,18 +16,14 @@ y = m*x+c;
 %Create noise for data in a Gaussian format (default std = 1 mean = 0)
 r = randn(1,samples);
 
-%compute weight at min error
-W = inv(x * x')*x.*y;
+W = inv()
 
 %Plot x against y adding on the Gaussian noise 
 figure
-hold on
-plot(x,y+r,'-o','linewidth',2);
-plot(x,y+W,'-','linewidth',2);
-legend('rawData','fitted data');
+plot(x,y+r,'-o','linewidth',2) 
 ylabel('Data Point Value');
 xlabel('Data Point Number');
 title('dataNormal raw data plot');
-
+legend('rawData');
 %plot(x,r(1,:)+y,'-o','linewidth',2) 
 
