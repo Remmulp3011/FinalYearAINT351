@@ -1,4 +1,4 @@
-function [data targetVec] = GenerateGaussianData(samples)
+function [data, targetVec] = GenerateGaussianData(samples)
 % Generates a two-class dataset in matrix 'data' with 2D data vectors and 
 % also indicates each pattern class in the matrix 'targetVec'
 
@@ -25,8 +25,8 @@ function [data targetVec] = GenerateGaussianData(samples)
 
 % see example usage at end of function
 % set demo = 1 to run this plot example
-demo = 0; % demo off
-%demo = 1; % demo on
+%demo = 0; % demo off
+demo = 1; % demo on
 
 % Ian Howard, University of Plymouth, December 2016
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
