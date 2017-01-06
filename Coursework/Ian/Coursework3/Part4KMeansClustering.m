@@ -39,9 +39,6 @@ newMean2 = 3;
 %Number of iterations through the outer while loop starting at 1
 iterationNumber = 1;
 
-%set1 = zeros(2,10000);
-%set2 = zeros(2,10000);
-
 %Define an empty matrix for the cluster datasets
 classidx1 = [];
 classidx2 = [];
@@ -172,10 +169,12 @@ while oldMean1 ~= newMean1 && oldMean2 ~= newMean2
     newMean1 = norm(newMeanSet1);
     newMean2 = norm(newMeanSet2);
     
+    %Add one to the iteration number to keep track of how many times the
+    %process has been executed.
     iterationNumber = iterationNumber+1;
 end
 
-disp(iterationNumber);
+%Plot the results once the centroids no longer change showing convergence.
 figure
 hold on
 plot(classidx1(1,:),classidx1(2,:),'r.');
