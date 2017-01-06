@@ -115,6 +115,10 @@ figure
 hold on
 plot(set1(1,:),set1(2,:),'r.');
 plot(set2(1,:),set2(2,:),'b.');
+title('K-means labelling of training data');
+xlabel('x-value');
+ylabel('y-value');
+legend('classidx == 1','classidx == 2');
 
 % figure
 % hold on
