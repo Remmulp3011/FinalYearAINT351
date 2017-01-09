@@ -20,15 +20,15 @@ r = randn(1,samples);
 W = inv(x * x')*x.*y;
 
 %Plot x against y adding on the Gaussian noise 
-figure
-hold on
-%plot(x,y+r,'-o','linewidth',2);
-plot(x,y+W,'-','linewidth',2);
-legend('fitted data');
-%legend('rawData','fitted data');
-ylabel('Data Point Value');
-xlabel('Data Point Number');
-title('dataNormal raw data plot');
+% figure
+% hold on
+% plot(x,y+r,'-o','linewidth',2);
+% plot(x,y+W,'-','linewidth',2);
+% legend('fitted data');
+% %legend('rawData','fitted data');
+% ylabel('Data Point Value');
+% xlabel('Data Point Number');
+% title('dataNormal raw data plot');
 
 %plot(x,r(1,:)+y,'-o','linewidth',2) 
 

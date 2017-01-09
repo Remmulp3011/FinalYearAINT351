@@ -50,7 +50,7 @@ disp(size(linFit));
 figure
 hold on
 plot(x,y+noise,'-o','linewidth',2);
-plot(x,yL+linFit(2),'-','linewidth',2);
+plot(linFit(1,:),linFit(2),'-','linewidth',2);
 plot(x,y+Quad(3),'-','linewidth',2);
 legend('rawData','fitted lin data','fitted quad data');
 ylabel('Data Point Value');
