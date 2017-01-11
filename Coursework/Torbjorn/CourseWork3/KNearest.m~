@@ -1,0 +1,57 @@
+function KNearest
+%KMEANSNEAREST Summary of this function goes here
+%   Detailed explanation goes here
+
+global proximityValue
+global LTM
+global proximityAndMatchVector
+
+EpisodeLTM = 1;
+StepInEpisode = 1;
+
+nearestSteps = [];
+nearestStepsRowNum = 1;
+proximityAndMatchVectorRowNum = 1;
+
+%for every episode in LTM
+while EpisodeLTM <= size(LTM,3)
+    %for every step in episode
+    while StepInEpisode <= 20
+        STM = LTM(:,:,EpisodeLTM);
+        stmObservationValue = LTM(StepInEpisode,1,EpisodeLTM);
+        %pass to proximity the LTM, step to start, 20x3 STM (current episode)
+        %and the observation of this step in LTM
+        proximity(LTM, EpisodeLTM, StepInEpisode,STM, stmObservationValue);
+        StepInEpisode = StepInEpisode + 1;
+        
+        if proximityValue > 0
+            if size(nearestSteps,1) == 10
+                while proximityAndMatchVectorRowNum <= size(proximityAndMatchVector,1)
+                minValue = min(nearestSteps(:,1));
+                possibleReplaceProximity = proximityAndMatchVector(proximityAndMatchVectorRowNum,1);
+                if possibleReplaceProximity > minValue
+                [row, column] = find(nearestSteps == minValue);
+                nearestStep(row,1) = proximityAndMatchVector(proximityAndMatchVectorRowNum,1);
+                nearestStep(row,2) = proximityAndMatchVector(proximityAndMatchVectorRowNum,2);
+                nearestStep(row,3) = proximityAndMatchVector(proximityAndMatchVectorRowNum,3);
+                nearestStep(row,4) = proximityAndMatchVector(proximityAndMatchVectorRowNum,4);
+                end
+                proximityAndMatchVectorRowNum = proximityAndMatchVectorRowNum + 1;
+                end
+                
+            end
+            %if any iteration has any matches resulting in proximities more
+            %than one the store the values.
+            nearestSteps = (nearestSteps:proximityAndMatchVector);
+            nearestStepsRowNum = nearestStepsRowNum +1;
+        end
+    end
+    EpisodeLTM = EpisodeLTM + 1;
+    %Reset the step number to 1 for next episode
+    StepInEpisode = 1;
+end
+
+disp('Knearest vector is :')
+disp(nearestSteps);
+end
+

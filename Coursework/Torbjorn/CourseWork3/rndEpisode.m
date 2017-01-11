@@ -67,6 +67,5 @@ end
 %disp(last20Steps);
 LTM(:,:,iterationNumber) = last20Steps;
 
-
 end
 

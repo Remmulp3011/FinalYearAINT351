@@ -13,6 +13,8 @@ iterationNumber = 1;
 global stepStore 
 stepStore = zeros(1,numberOfEpisodesAdded);
 
+global STM
+
 
 %Store results of the 20x3 matrix in the LTM for each iteration. Each
 %episode will generate a new 20X3 matrix which should be added to LTM. When
@@ -24,15 +26,7 @@ while iterationNumber <= numberOfEpisodesAdded
     iterationNumber = iterationNumber + 1;
 end
 
-%Assigned arbituary numbers. Sendin the LTM (all 20x3 matrices) the 
-% episode from the LTM, a step from that episode STM (the current
-%episode 20x3 matrix, which is the last and is to be fixed!) and then the 
-%obervation value from that step.
-
-
-
-%proximity(LTM,3,5,STM,10);
-KNearest();
+proximity(LTM,3,5,STM,LTM(,,3))
 
 %disp('Size of LTM is:');
 %disp(size(LTM));
