@@ -19,7 +19,8 @@ noise = randn(1,samples);
 %compute weight at min error
 W = inv(x * x')*x.*y;
 
-%Plot x against y adding on the Gaussian noise 
+%Plot x against y adding on the Gaussian noise and plot the fitted line
+%ontop of the noisy line.
 figure
 hold on
 plot(x,y+noise,'-o','linewidth',2);

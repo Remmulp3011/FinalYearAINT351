@@ -12,26 +12,25 @@ C = 6;
 
 %Sample x and specify other variable
 x = linspace(minX,maxX);
-c = 6;
-m = 1.6;
 
 %Mean and stanDev
 mean = 0;
 stanDev = 5;
 
 %Combine variables to calculate y in a quadratic equation
-y = A*x.^2+B*x+c;
+y = A*x.^2+B*x+C;
 
-m = (y - c)/x;
-yL = m*x + c;
+%Find the gradient for the quadratic curve
+m = (y - C)/x;
+
+%Use the gradient to find yL
+yL = m*x + C;
+
 %Create noise for data in a Gaussian format (default std = 5 mean = 0)
 noise = stanDev.*randn(1,samples)+mean;
 
 %Linear basis for function
 xLin = [x; ones(1,samples);];
-disp(size(x));
-disp(size(y));
-
 
 %Fit test data with linear line
 linFit = regress(y',xLin');
@@ -42,10 +41,8 @@ Quad = [x.*x;x;ones(1,samples);];
 %Fit test data with quadratic line
 quadFit = regress(y',Quad');
 
-disp(linFit);
-disp(quadFit);
-%Plot x against y adding on the Gaussian noise 
-
+%Plot x against y adding on the Gaussian noise and plot the two best fit
+%lines for both the straight line and quadratic.
 disp(size(linFit));
 figure
 hold on

@@ -3,6 +3,7 @@ function rewardFunction(state, action)
 %if in state 5 and action 3 is taken as this results in the goal state.
 
 global reward;
+
 if(state == 5)
     if(action == 3)
         reward = 10;

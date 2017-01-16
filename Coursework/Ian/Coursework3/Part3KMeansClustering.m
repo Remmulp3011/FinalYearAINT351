@@ -100,6 +100,8 @@ while oldMean1 ~= newMean1 && oldMean2 ~= newMean2
             end
             n = n + 1;
         end
+        %Reset n to one for the next iteration so the matrix can be looped
+        %through again.
         n=1;
     %Enter this else statement on any iteration number except the first
     else

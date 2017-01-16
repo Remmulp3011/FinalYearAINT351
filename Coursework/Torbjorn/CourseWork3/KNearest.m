@@ -7,7 +7,7 @@ global proximityAndMatchVector
 EpisodeLTM = 1;
 StepInEpisode = 1;
 
-nearestSteps = zeros(10,4);
+nearestSteps = [];
 nearestStepsRowNum = 1;
 proximityAndMatchVectorRowNum = 1;
 
@@ -23,7 +23,7 @@ while EpisodeLTM <= size(LTM,3)
         StepInEpisode = StepInEpisode + 1;
         
         if proximityValue > 0
-            %if size(nearestSteps,1) == 10
+            if size(nearestSteps,1) == 10
                 while proximityAndMatchVectorRowNum <= size(proximityAndMatchVector,1)
                     %find min proximity value in nearest steps
                     minValue = min(nearestSteps(:,1));
@@ -34,22 +34,33 @@ while EpisodeLTM <= size(LTM,3)
                         [row, column] = find(nearestSteps == minValue);
                         %replace the nearestStep row with the values in the
                         %proximityAndMatchVector for that row.
-                        nearestStep(row,1) = proximityAndMatchVector(proximityAndMatchVectorRowNum,1);
-                        nearestStep(row,2) = proximityAndMatchVector(proximityAndMatchVectorRowNum,2);
-                        nearestStep(row,3) = proximityAndMatchVector(proximityAndMatchVectorRowNum,3);
-                        nearestStep(row,4) = proximityAndMatchVector(proximityAndMatchVectorRowNum,4);
+                        nearestSteps(row,1) = proximityAndMatchVector(proximityAndMatchVectorRowNum,1);
+                        nearestSteps(row,2) = proximityAndMatchVector(proximityAndMatchVectorRowNum,2);
+                        nearestSteps(row,3) = proximityAndMatchVector(proximityAndMatchVectorRowNum,3);
+                        nearestSteps(row,4) = proximityAndMatchVector(proximityAndMatchVectorRowNum,4);
                     end
                     %iterate through all rows in the proximityAndMatchVector
                     proximityAndMatchVectorRowNum = proximityAndMatchVectorRowNum + 1;
-                %end
+                end
                 %reset the row num for the next call.
                 
-            %else
+            else
+                %loop through each value in the proximity vector while
+                %nearestStep is less than 10
+                while size(nearestSteps,1) < 10 && proximityAndMatchVectorRowNum <= size(proximityAndMatchVector,1)
                 %if any iteration has any matches resulting in proximities more
                 %than one then store the values.
-                %nearestSteps = (nearestSteps:proximityAndMatchVector);
-                %nearestStepsRowNum = nearestStepsRowNum +1;
+                nearestSteps(nearestStepsRowNum,1) = proximityAndMatchVector(proximityAndMatchVectorRowNum,1);
+                nearestSteps(nearestStepsRowNum,2) = proximityAndMatchVector(proximityAndMatchVectorRowNum,2);
+                nearestSteps(nearestStepsRowNum,3) = proximityAndMatchVector(proximityAndMatchVectorRowNum,3);
+                nearestSteps(nearestStepsRowNum,4) = proximityAndMatchVector(proximityAndMatchVectorRowNum,4);
+                nearestStepsRowNum = nearestStepsRowNum +1;
+                proximityAndMatchVectorRowNum = proximityAndMatchVectorRowNum +1;
                 end
+                proximityAndMatchVectorRowNum = 1;
+                disp('LESS THAN 10')
+                disp(nearestSteps);
+            end
             proximityAndMatchVectorRowNum = 1;
         end
     end

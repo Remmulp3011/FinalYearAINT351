@@ -12,7 +12,6 @@ irisSet2 = [];
 %For loop to loop through the data set intervals of records going from 0
 %(value passed from learnDecisisonTree) to the max number. Use this to
 %determine the type and populate into the next column.
-
 for n=1:size(dataSet,1)
     if (value < thresholdValue)
         %add to subset 1
@@ -26,21 +25,7 @@ for n=1:size(dataSet,1)
         rowNum = rowNum+1;
     end
 end
-% disp('Iris Set 1 final:')
-% disp(size(irisSet1));
-% disp(irisSet1);
-% disp('Iris Set 2 final:')
-% disp(size(irisSet2))
-% disp(irisSet2);
+
 entropyFunction(irisSet1,irisSet2,dataSet);
 
-% T = empty tree
-% repeat
-%   split data-set, D, into sub-sets, S0-Sn, using T
-%   for each subset, Si
-%     for each variables, xj
-%       for each values, vk, in Si
-% 	  split Si into sub-sets Si1 and Si2: vk>xj and xj>=vk
-% 	  find max improvement max(I(Si1, Si2)) for split <Si, xj, vk> 
-%   add split <Si, xj, vk> with max(I(Si1, Si2)) to T
-% until max(I(Si1, Si2)) <= 0.0 
+end

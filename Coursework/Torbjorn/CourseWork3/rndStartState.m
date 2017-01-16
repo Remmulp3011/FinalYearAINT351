@@ -1,6 +1,4 @@
 function rndStartState
-%RNDSTARTSTATE Summary of this function goes here
-%   Detailed explanation goes here
 
 %List of possible states.
 startingStates = [1,3,4,5,6,7,8,9,10];

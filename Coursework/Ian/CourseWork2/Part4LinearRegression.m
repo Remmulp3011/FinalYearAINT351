@@ -10,17 +10,15 @@ A = 1.6;
 B = 2.5;
 C = 6;
 
-%Sample x and specify other variable
+%Sample x
 x = linspace(minX,maxX);
-c = 6;
-m = 1.6;
 
 %Mean and stanDev
 mean = 0;
 stanDev = 5;
 
 %Combine variables to calculate y in a linear equation
-y = A*x.^2+B*x+c;
+y = A*x.^2+B*x+C;
 
 %Create noise for data in a Gaussian format (default std = 5 mean = 0)
 noise = stanDev.*randn(1,samples)+mean;

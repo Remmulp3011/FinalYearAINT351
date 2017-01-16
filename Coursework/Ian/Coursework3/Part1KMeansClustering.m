@@ -12,17 +12,18 @@ stanDevSet2 = 2;
 
 %Create a Matrix of 2 X samples (2xn) with the specified mean and standard 
 %deviation using 'standardDeviation * randn(2,n) + mean;' for each data set
-uncorrelatedData1 = stanDevSet1 * randn(2,samples1) + meanSet1;
-
-uncorrelatedData2 = stanDevSet2 * randn(2,samples2) + meanSet2;
+dataSet1 = stanDevSet1 * randn(2,samples1) + meanSet1;
+dataSet2 = stanDevSet2 * randn(2,samples2) + meanSet2;
 
 %Define the x and y values for set 1 and 2 respectively
-x1 = uncorrelatedData1(1,:);
-y1 = uncorrelatedData1(2,:);
+x1 = dataSet1(1,:);
+y1 = dataSet1(2,:);
 
-x2 = uncorrelatedData2(1,:);
-y2 = uncorrelatedData2(2,:);
+x2 = dataSet2(1,:);
+y2 = dataSet2(2,:);
 
+%plot the two data sets with dataset1 being plotted as blue dots and
+%dataset2 being plotted as red dots.
 figure
 hold on
 plot(x1,y1,'b.');

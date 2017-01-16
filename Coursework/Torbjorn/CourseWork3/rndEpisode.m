@@ -1,6 +1,4 @@
 function rndEpisode(startState)
-%RNDEPISODE Summary of this function goes here
-%   Detailed explanation goes here
 
 global observation;
 global nextState;
@@ -61,10 +59,8 @@ if size(episode,1)<20
 else
     last20Steps = episode(size(episode,1)-19:size(episode,1),:);
 end
-%disp('size is')
-%disp(size(last20Steps));
-%disp('last 20 steps are:');
-%disp(last20Steps);
+
+%Set the LTM matrix at the specific iteration to the last 20 steps.
 LTM(:,:,iterationNumber) = last20Steps;
 
 end

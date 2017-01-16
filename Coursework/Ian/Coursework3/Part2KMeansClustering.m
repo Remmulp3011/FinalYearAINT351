@@ -12,22 +12,18 @@ stanDevSet2 = 2;
 
 %Create a Matrix of 2 X samples (2xn) with the specified mean and standard 
 %deviation using 'standardDeviation * randn(2,n) + mean;' for each data set
-uncorrelatedData1 = stanDevSet1 * randn(2,samples1) + meanSet1;
-
-uncorrelatedData2 = stanDevSet2 * randn(2,samples2) + meanSet2;
-
-
+dataSet1 = stanDevSet1 * randn(2,samples1) + meanSet1;
+dataSet2 = stanDevSet2 * randn(2,samples2) + meanSet2;
 
 %Concatenate the two sets into a single dataset
-TrainData = [uncorrelatedData1; uncorrelatedData2];
+TrainData = [dataSet1; dataSet2];
 
 %Define the x and y values for the 4 dimensions
 x1 = TrainData(1,:);
 y1 = TrainData(2,:);
-
 x2 = TrainData(3,:);
 y2 = TrainData(4,:);
-
+%Plot both sets of coordinates 
 figure
 hold on
 plot(x1,y1,'b.');

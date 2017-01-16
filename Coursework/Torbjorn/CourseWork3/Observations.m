@@ -1,6 +1,5 @@
 function Observations(state)
-%OBSERVATIONS Summary of this function goes here
-%   Detailed explanation goes here
+
 global observation;
 
 if state == 1 || state == 2 || state == 3

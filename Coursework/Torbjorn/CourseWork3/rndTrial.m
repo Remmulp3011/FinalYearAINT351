@@ -1,6 +1,4 @@
-function rndTrial(numberOfEpisodesAdded)
-%RNDTRIAL Summary of this function goes here
-%   Detailed explanation goes here
+function [output] = rndTrial(numberOfEpisodesAdded)
 
 %This should take the number of episodes to run and therefore the number of
 %results sets of 20x3 to add to the 3D matrix.
@@ -24,31 +22,14 @@ while iterationNumber <= numberOfEpisodesAdded
     iterationNumber = iterationNumber + 1;
 end
 
-%Assigned arbituary numbers. Sendin the LTM (all 20x3 matrices) the 
+output = stepStore;
+
+%Assigned arbituary numbers. Sending the LTM (all 20x3 matrices) the 
 % episode from the LTM, a step from that episode STM (the current
 %episode 20x3 matrix, which is the last and is to be fixed!) and then the 
-%obervation value from that step.
-
-
+%observation value from that step.
 
 %proximity(LTM,3,5,STM,10);
 KNearest();
-
-%disp('Size of LTM is:');
-%disp(size(LTM));
-%disp('LTM is:');
-%disp(LTM);
-%disp('Step Store is:')
-%disp(stepStore);
-%Maybe should call the intial random start state generater which will in
-%turn call the rnd Episode.
-
-
-%final = [stepStore; LTM];
-%To plot rndTrial like in step 3
-
-%figure
-%plot(final);
-
 end
 

@@ -13,20 +13,21 @@ while TrialNumber <= 100
 stepNumber = 1;
 StartingState();
 
+%While the state is not the goal state.
 while endTrialState ~= 2
     state = endTrialState;
     stepNumber = stepNumber + 1;
     eGreedyActionSelection(qTable,state);
 end
+%Store the number of steps taken to reach the goal state.
 stepNumberStore(columnNum,TrialNumber) = stepNumber;
 TrialNumber = TrialNumber + 1;
 end
 
 % figure
-% plot(stepNumberStore)
+% plot(stepNumberStore);
 % title('Q-learning performance improvement')
 % xlabel('Episode Number')
 % ylabel('Number of Steps')
-%axis = [xmin,xmax,ymin,ymax,zmin,zmax]
 
 end

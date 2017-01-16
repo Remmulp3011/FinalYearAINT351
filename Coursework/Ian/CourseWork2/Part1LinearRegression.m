@@ -14,14 +14,13 @@ m = 1.6;
 y = m*x+c;
 
 %Create noise for data in a Gaussian format (default std = 1 mean = 0)
-r = randn(1,samples);
+noise = randn(1,samples);
 
 %Plot x against y adding on the Gaussian noise 
 figure
-plot(x,y+r,'-o','linewidth',2) 
+plot(x,y+noise,'-o','linewidth',2) 
 ylabel('Data Point Value');
 xlabel('Data Point Number');
 title('dataNormal raw data plot');
 legend('rawData');
-%plot(x,r(1,:)+y,'-o','linewidth',2) 
 

@@ -14,11 +14,12 @@ m = 1.6;
 y = m*x+c;
 
 %Create noise for data in a Gaussian format (default std = 1 mean = 0)
-r = randn(1,samples);
+noise = randn(1,samples);
 
-%compute weight at min error
+%compute weight matrix at min error
 W = inv(x * x')*x.*y;
 
+disp(size(W));
 %Plot x against y adding on the Gaussian noise 
 % figure
 % hold on
